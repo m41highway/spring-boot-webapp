@@ -8,7 +8,7 @@ public class GreetController {
 
    @RequestMapping("/")
    public String greet() {
-      return "Hello from Spring Boot";
+      return "Greetings from Spring Boot!";
    }
 
 }
