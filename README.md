@@ -15,3 +15,10 @@ Step 3 enable the starter actuator
 2. start the application with command "mvn package && java -jar target/basic-spring-boot-webapp-0.1.0.jar"
 3. visit the non-functional api by "curl localhost:8080/xxx" (http://docs.spring.io/spring-boot/docs/1.3.2.RELEASE/reference/htmlsingle/#production-ready-endpoints)
 4. add git ignore by type "touch .gitignore" in the root directory of the git repository
+
+Step 4 add AMQP config and the a sender
+1. add amqp dependant in pom
+2. implement MessagingBroker to configure the exchange and queue
+3. Trigger the send method in the REST api /book by typing "curl localhost:8080/book"
+4. Monitor the Rabbit MQ Admin to see a request has stored in the queue
+
