@@ -9,3 +9,9 @@ Step 1 add a new test class for testing the end point,
 
 Step 2 add a new integration test
 1. run as java program to invoke the test
+
+Step 3 enable the starter actuator
+1. add starter actuator dependant in pom
+2. start the application with command "mvn package && java -jar target/basic-spring-boot-webapp-0.1.0.jar"
+3. visit the non-functional api by "curl localhost:8080/xxx" (http://docs.spring.io/spring-boot/docs/1.3.2.RELEASE/reference/htmlsingle/#production-ready-endpoints)
+4. add git ignore by type "touch .gitignore" in the root directory of the git repository
