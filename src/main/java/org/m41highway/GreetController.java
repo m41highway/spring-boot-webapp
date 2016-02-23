@@ -15,18 +15,28 @@ public class GreetController {
    @Autowired
    RabbitTemplate rabbitTemplate;
 
+   @Autowired
+   MessageReceiver receiver;
+
    @RequestMapping("/")
    public String greet() {
-
-      rabbitTemplate.convertAndSend(queueName, "Hello from RabbitMQ!");
-
       return "Greetings from Spring Boot!";
    }
 
    @RequestMapping("/book")
    public void book() {
-
       rabbitTemplate.convertAndSend(queueName, "I want to buy ticket");
-
    }
+
+   /*
+   @RequestMapping("/confirm")
+   public void confirm() {
+      try {
+
+         receiver.getLatch().await(10000, TimeUnit.MILLISECONDS);
+
+      } catch (InterruptedException e) {
+         e.printStackTrace();
+      }
+   }*/
 }
