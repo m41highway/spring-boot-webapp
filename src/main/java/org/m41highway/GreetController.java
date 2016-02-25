@@ -18,14 +18,23 @@ public class GreetController {
    @Autowired
    MessageReceiver receiver;
 
+   @Autowired
+   SystemConfig systemConfig;
+
    @RequestMapping("/")
    public String greet() {
+      //System.out.println("Getting config variable " + systemConfig.getName());
       return "Greetings from Spring Boot!";
    }
 
    @RequestMapping("/book")
    public void book() {
       rabbitTemplate.convertAndSend(queueName, "I want to buy ticket");
+   }
+
+   @RequestMapping("/hello")
+   public void hello() {
+      System.out.println("Hola " + systemConfig.getName());
    }
 
    /*

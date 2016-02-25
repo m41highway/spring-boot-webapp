@@ -1,0 +1,21 @@
+##### COMMON SETTINGS #####
+system:
+  name: Spring Boot Auto-config
+
+spring:
+  profiles.active: development
+
+---
+##### DEVELOPMENT #####
+spring:
+  profiles: development
+
+---
+##### INTEGRATION #####
+spring:
+  profiles: integration
+
+---
+##### PRODUCTION #####
+spring:
+  profiles: production
